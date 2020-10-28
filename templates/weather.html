@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+   <body>
+        <center></br></br>
+            <h1>Today's weather in {{ info['City'] }}</h1>
+            <h1>{{ info['Temp'] }} °C
+                <!-- match the image code to show the correct image -->
+                <!-- images from (http://openweathermap.org/weather-conditions) -->
+                {% if info['Image'] =='01d' %}
+                    <img src="/static/01d.png" width="auto" height="80%">
+                {% elif info['Image'] =='02d' %}
+                    <img src="/static/02d.png" width="auto" height="80%">
+                {% elif info['Image'] =='03d' %}
+                    <img src="/static/03d.png" width="auto" height="80%">
+                {% elif info['Image'] =='04d' %}
+                    <img src="/static/04d.png" width="auto" height="80%">
+                {% elif info['Image'] =='09d' %}
+                    <img src="/static/09d.png" width="auto" height="80%">
+                {% elif info['Image'] =='10d' %}
+                    <img src="/static/10d.png" width="auto" height="80%">
+                {% elif info['Image'] =='11d' %}
+                    <img src="/static/11d.png" width="auto" height="80%">
+                {% elif info['Image'] =='13d' %}
+                    <img src="/static/13d.png" width="auto" height="80%">
+                {% elif info['Image'] =='50d' %}
+                    <img src="/static/50d.png" width="auto" height="80%">
+                {% endif %}  
+            </h1>
+            <h1></br>5 day forecast in {{ info['City'] }}</h1>
+            <img id="graph" src="/static/graph_five_day.png?number=" width="80%" height="auto">
+
+            <h1></br>5 day/3 hour forecast in {{ info['City'] }}</h1>
+            <img id="graph2" src="/static/graph_five_day_hour.png?number=" width="80%" height="auto">
+
+            <!-- generate random number to add to end of image, prevent image loading problems with cache -->
+            <script type="text/javascript" language="JavaScript">
+            number = Math.random() * 10000000000000000;
+            document.getElementById('graph').src += number;
+            document.getElementById('graph2').src += number;
+            </script>
+
+        </center>
+   </body>
+</html>

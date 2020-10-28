@@ -1,0 +1,9 @@
+Package requirements and versions listed in "requirements.txt" in the same directory
+
+1) On the command line, go to the directory of this text file
+2) Run the program with "python sample.py"
+3) Open your browser and go to the address "http://127.0.0.1:33507/index" or "http://127.0.0.1:33507"
+4) Type a city name in the form
+5) Press submit to view the weather data
+6) Go back to enter another city
+7) Exit by closing the tab and pressing Ctrl+C on your command line
